@@ -1,0 +1,24 @@
+From 66da5a5fffb57b50cfc3a095cc93b39fdb9b4167 Mon Sep 17 00:00:00 2001
+From: Nehal J Wani <nehaljw.kkd1@gmail.com>
+Date: Sun, 3 Aug 2025 10:34:23 +0100
+Subject: [PATCH 4/4] Add missing include for byteswap functions
+
+---
+ c++/src/Geospatial.cc | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/c++/src/Geospatial.cc b/c++/src/Geospatial.cc
+index 6d7d26870..a0904abd7 100644
+--- a/c++/src/Geospatial.cc
++++ b/c++/src/Geospatial.cc
+@@ -66,6 +66,7 @@ namespace orc::geospatial {
+ 
+ #if defined(_MSC_VER)
+ #include <intrin.h>  // IWYU pragma: keep
++#include <stdlib.h>
+ #define ORC_BYTE_SWAP64 _byteSwap_uint64
+ #define ORC_BYTE_SWAP32 _byteSwap_ulong
+ #else
+-- 
+2.50.0
+
